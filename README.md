@@ -39,4 +39,4 @@ Or you create a file with that password and pass it to ansible:
 cat your_secret_password > ~/.vault_pass
 ansible-playbook -i testing.ini site.yml --vault-password-file ~/.vault_pass
 ```
-**Don't forget to add this file to youre .gitignore if you put it inside of your repository!** 
+**Don't forget to add this file to your .gitignore if you put it inside of your repository!** 
