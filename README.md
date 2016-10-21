@@ -12,11 +12,12 @@ It has been described in [Ansible best practises](https://docs.ansible.com/ansib
 ## Ansible Language
 
 ### Modules
-TODO
-[All Modules](https://docs.ansible.com/ansible/list_of_all_modules.html)
+* (also referred to as “task plugins” or “library plugins”) are the workers in ansible
+* Ansible ships with a number of modules that can be executed directly on remote hosts ([List of all Modules](https://docs.ansible.com/ansible/list_of_all_modules.html))
+* Users can also write their own modules ( in python <3 ), but you probably don't need to. 
 
 ### Playbooks
-TODO
+Playbooks are Ansible’s configuration, deployment, and orchestration language. They can describe a policy you want your remote systems to enforce, or a set of steps in a general IT process.
 
 ###  Inventories
 Ansible works against multiple systems in your infrastructure at the same time. It does this by selecting portions of systems listed in Ansible’s inventory file, which defaults to being saved in the location `/etc/ansible/hosts`. You can specify a different inventory file using the `-i <path>` option on the command line.
@@ -25,6 +26,7 @@ Inventory files are written in the ini file format and contain groups of servers
 
 ### Roles
 * Structure defines file usage (Convention over Configuration)
+  * See this repositories structure
   * [Role Structure](https://docs.ansible.com/ansible/playbooks_best_practices.html#directory-layout)
 
 ## Running ansible
