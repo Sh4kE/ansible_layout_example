@@ -55,7 +55,7 @@ ansible-playbook -i testing.ini site.yml --limit dbservers
 ansible-playbook -i testing.ini webservers.yml
 ```
 
-4. Ansible Vault ...
+## Ansible Vault ...
 ... is a secure Key-Value store, which allows keeping sensitive data such as passwords or keys in an encrypted file. This vault file can then be distributed or placed in source control.
 
 To create a new encrypted data file, run the following command:
