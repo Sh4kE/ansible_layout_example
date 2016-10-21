@@ -17,12 +17,17 @@ It has been described in [Ansible best practises](https://docs.ansible.com/ansib
 * Users can also write their own modules ( in python <3 ), but you probably don't need to. 
 
 ### Playbooks
-Playbooks are Ansible’s configuration, deployment, and orchestration language. They can describe a policy you want your remote systems to enforce, or a set of steps in a general IT process.
+* are Ansible’s configuration, deployment, and orchestration language
+* describe a policy you want your remote systems to enforce
+* can and should be idempotent (can be run several times without changing anything)
 
 ###  Inventories
 Ansible works against multiple systems in your infrastructure at the same time. It does this by selecting portions of systems listed in Ansible’s inventory file, which defaults to being saved in the location `/etc/ansible/hosts`. You can specify a different inventory file using the `-i <path>` option on the command line.
- 
-Inventory files are written in the ini file format and contain groups of servers, which are a way to tell ansible, which servers your system is made up of. You can add a server to multiple groups or even define groups of groups. So you can build a tree of servers.
+
+* contain groups of servers to tell ansible, which servers your system is made up of
+* written in the ini file format
+* servers may be added to multiple groups
+* groups of groups possible as well (for building a tree of servers)
 
 ### Roles
 * Structure defines file usage (Convention over Configuration)
