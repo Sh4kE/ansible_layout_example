@@ -4,39 +4,43 @@ It has been described in [Ansible best practises](https://docs.ansible.com/ansib
 
 ## What is Ansible
 * Configuration Management tool
+* It communicates with remote machines over SSH
+* configured via ini files
+* Can be run from any machine with Python 2.6 or 2.7 installed (Currently)
+* Managed nodes need Python 2.4 or later
 
-### Ansible Language
+## Ansible Language
 
-#### Modules
+### Modules
 TODO
 [All Modules](https://docs.ansible.com/ansible/list_of_all_modules.html)
 
-#### Playbooks
+### Playbooks
 TODO
 
-#### Inventories
-TODO
+###  Inventories
+Ansible works against multiple systems in your infrastructure at the same time. It does this by selecting portions of systems listed in Ansible’s inventory file, which defaults to being saved in the location `/etc/ansible/hosts`. You can specify a different inventory file using the `-i <path>` option on the command line.
+ 
+Inventory files are written in the ini file format and contain groups of servers, which are a way to tell ansible, which servers your system is made up of. You can add a server to multiple groups or even define groups of groups. So you can build a tree of servers.
 
-##### Groups
-TODO
+### Roles
+* Structure defines file usage (Convention over Configuration)
+  * [Role Structure](https://docs.ansible.com/ansible/playbooks_best_practices.html#directory-layout)
 
-#### Roles
-TODO
+## Running ansible
 
-### Running ansible
-
-#### Running a module ad hoc
+### Running a module ad hoc
 ```
 ansible scriptclub -m ping
-ansible scriptclub -m command -a 
+ansible all -a "/bin/echo hello"
+ansible -i inventory_file webservers -m service -a "name=httpd state=restarted"
 ```
 
-#### Running playbooks
+### Running playbooks
 You can either provision all servers by running:
 ```
 ansible-playbook -i testing.ini site.yml 
 ```
-
 
 or provision only a subset of your servers via:
 ```
@@ -44,7 +48,7 @@ ansible-playbook -i testing.ini site.yml --limit dbservers
 ansible-playbook -i testing.ini webservers.yml
 ```
 
-### Ansible Vault ...
+4. Ansible Vault ...
 ... is a secure Key-Value store, which allows keeping sensitive data such as passwords or keys in an encrypted file. This vault file can then be distributed or placed in source control.
 
 To create a new encrypted data file, run the following command:
