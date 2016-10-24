@@ -1,0 +1,17 @@
+---
+
+- name: Install http and php etc
+  yum: name={{ item }} state=present
+  with_items:
+   - httpd
+   - php
+   - php-mysql
+   - libsemanage-python
+   - libselinux-python
+
+- name: Configure http config
+  copy: src=httpd.conf dest=/etc/httpd/httpd.conf
+  notify: restart httpd
+
+- name: http service state
+  service: name=httpd state=started enabled=yes
