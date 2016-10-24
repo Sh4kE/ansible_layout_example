@@ -1,0 +1,9 @@
+---
+
+- name: Install common packages
+  yum: name={{ item }} state=present
+  with_items:
+   - git
+   - zsh
+
+- include: install_ntp.yml
