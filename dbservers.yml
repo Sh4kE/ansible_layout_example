@@ -1,4 +1,4 @@
 - hosts: dbservers
   roles:
     - common
-    - oracle
+    - db
