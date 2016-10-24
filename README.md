@@ -4,6 +4,7 @@ It has been described in [Ansible best practises](https://docs.ansible.com/ansib
 
 ## What is Ansible
 * Configuration Management tool
+  ** We don't want something like [that](https://imgs.xkcd.com/comics/universal_install_script.png) anymore
 * It communicates with remote machines over SSH
 * configured via ini files
 * Can be run from any machine with Python 2.6 or 2.7 installed (Currently)
