@@ -1,5 +1,6 @@
 [webservers]
-192.169.0.[0-2]
+lnxv-7889
+lnxv-7938
 
 [dbservers]
-192.169.1.1
+lnxv-7925

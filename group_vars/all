@@ -1,4 +1,3 @@
 ---
 ssh_port: 1022
-httpd_port: 80
-ntpserver: 192.168.1.2
+ntpserver: de.pool.ntp.org

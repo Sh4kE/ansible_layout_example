@@ -1,10 +1,9 @@
 # Webservers
 [mercury-webservers]
-192.170.0.1
-192.170.0.2
+lnxp-779[5-6]
 
 [venus-webservers]
-192.170.0.[0-9]
+lnxp-7246
 
 [webservers:children]
 mercury-webservers
@@ -12,11 +11,10 @@ venus-webservers
 
 # Database servers
 [mars-dbservers]
-192.170.1.1
-192.170.1.2
+lnxp-780[2-3]
 
 [jupiter-dbservers]
-192.170.1.[0-9]
+lnxv-7905
 
 [dbservers:children]
 mars-appservers
